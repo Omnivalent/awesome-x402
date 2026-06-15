@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlotPool — Parimutuel Sports Betting on Solana</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◎</span>
+      <div>
+        <h1>SlotPool</h1>
+        <p class="tagline">Buy slots. Winners split the pot.</p>
+      </div>
+    </div>
+    <div class="wallet">
+      <span id="mode-badge" class="badge"></span>
+      <button id="connect-btn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="banner" class="banner hidden"></section>
+
+    <section class="markets-head">
+      <h2>Open Markets</h2>
+      <button id="refresh-btn" class="ghost">↻ Refresh</button>
+    </section>
+
+    <section id="markets" class="markets"></section>
+
+    <details class="admin">
+      <summary>Operator console</summary>
+      <div class="admin-body">
+        <p class="muted">Admin token is required for these actions (default <code>dev-admin-token</code>).</p>
+        <label>Admin token <input id="admin-token" type="password" placeholder="x-admin-token" /></label>
+
+        <h3>Create market</h3>
+        <div class="grid2">
+          <label>Title <input id="m-title" placeholder="Team A vs Team B" /></label>
+          <label>Category <input id="m-cat" placeholder="Football" /></label>
+        </div>
+        <label>Description <input id="m-desc" placeholder="Short description" /></label>
+        <div class="grid2">
+          <label>Slot price (SOL) <input id="m-price" type="number" value="1" step="0.01" min="0" /></label>
+          <label>Entry fee (bps) <input id="m-entry" type="number" value="250" /></label>
+        </div>
+        <div class="grid2">
+          <label>Cash-out fee (bps) <input id="m-cashout" type="number" value="500" /></label>
+          <label>House rake (bps) <input id="m-rake" type="number" value="0" /></label>
+        </div>
+        <label>Outcomes (one per line)
+          <textarea id="m-outcomes" rows="3" placeholder="Brazil win&#10;Argentina win&#10;Draw"></textarea>
+        </label>
+        <button id="create-btn">Create market</button>
+      </div>
+    </details>
+  </main>
+
+  <footer>
+    <p class="muted">
+      Demo MVP. Parimutuel pools on Solana. Running for real money is regulated
+      gambling — get licensing and legal review first.
+    </p>
+  </footer>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
