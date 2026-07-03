@@ -1,0 +1,23 @@
+{
+  "name": "solana-sports-betting",
+  "version": "0.1.0",
+  "description": "Parimutuel sports betting pools on Solana — buy slots on an outcome, winners split the pot, operator earns the fees.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node server/seed.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.3",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "license": "MIT"
+}
